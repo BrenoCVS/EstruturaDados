@@ -18,7 +18,7 @@ int main(){
   cout <<"\nEndereco de x: "<< &x;
 
   cout << endl;
-  cout << "------------------------------------"<< endl;
+  cout << "-----------------------------------"<< endl;
   cout << endl;
 
   ptr2=&y;
