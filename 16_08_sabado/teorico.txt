@@ -1,0 +1,33 @@
+01 - Explique o que é um ponteiro e qual a sua função principal em programação.
+
+Resposta: É uma variável que guarda o endereço de memória de outra variavél e por esse endereço pode manipular a variável principal.
+
+
+02-Como se acessa o valor da variável que um ponteiro aponta?
+
+Resposta: Temos que usar * seguido do nome do ponteiro, assim acessamos o valor guardado no endereço de momória que está no ponteiro.
+
+
+03- Como se atribui um valor a uma variável através de um ponteiro?
+
+Resposta: Tamném usamos o * seguido do nome do ponteiro, depois colocamos o "=" e o valor que sera colocado, pois assim não estamos mudando o valor do ponteiro, mas guardando um valor no endereço de memórioa que esta no ponteiro
+
+
+04 - Como se inicializa um ponteiro com o endereço de uma variável (com exceção para arrays)?
+
+Resposta: Devemos primeiramente declarar o ponteiro com o mesmo tipo da variavel, e, quando formos atribuiur o valor do ponteiro, colocamos o nome do ponteiro "=" &nome da variavel, o & faz que, ao inves do valor da variavel, seja guaradado o endereço de memória da variavel.
+
+
+05 - Quais são as duas formas de acessar as informações de uma struct quando se utiliza um ponteiro para ela?
+
+Resposta: Podemos usar * e . ou ->. Exemplos: (*ptr).nome OU ptr->nome.
+
+
+06 - Explique a diferença entre alocação automática e alocação dinâmica.
+
+Resposta :A alocação automática guarda memória pra variável e libera sozinha quando termina de rodar o programa, tipo variáveis de função. A alocação dinâmica cria memória enquanto o programa tá rodando e só libera quando a gente manda, usando delete. A diferença é que a automática o compilador cuida, e a dinâmica a gente que controla.
+
+
+07 - Quais são os dois operadores em C++ utilizados para o sistema de alocação dinâmica? Explique a função de cada operador.
+
+Resposta: Os operadores são: NEW e DELETE. O new reserva o espaço na memoria, devolvendo um ponteiro referente a essa memoria. O delete libera a memoria reservada com o new.
