@@ -17,6 +17,7 @@ bool lista_vazia(Lista *lista);
 void inserir_lista(Lista *lista, int dado);
 void removerElemento(Lista *lista, int dado);
 void mostraLista(Lista *lista);
+void pesquisaElemento(Lista *lista, int dado);
 void deletarLista(Lista *lista);
 
 

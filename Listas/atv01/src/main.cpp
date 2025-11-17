@@ -14,6 +14,7 @@ int main() {
         cout<<"\n1 - Inserir elemento na lista";
         cout<<"\n2 - Remover elemento da lista";
         cout<<"\n3 - Imprimir lista";
+        cout<<"\n4 - Pesquisar elemento";
         cout<<"\n0 - Sair do menu\n";
         cin >> op;
 
@@ -31,6 +32,11 @@ int main() {
             break;
           case 3:
               mostraLista(lista);
+            break;
+          case 4:
+              cout<<"\nInsira o elemento que deseja procurar: ";
+              cin >> num;
+              pesquisaElemento(lista, num);
             break;
           case 0:
               cout << "Saindo do sistema";

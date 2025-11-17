@@ -8,7 +8,7 @@ Lista* criarLista(){
 
   if(lista==nullptr){
     //Caso de erro na alocação, devolvemos uma mensagem e matamos a execução
-    cout << "Lista não criada";
+    cout << "\nLista não criada\n";
   } else{
     //se a alocação der certo, o inicio aponta para nullptre, pois a lista ainda é vazia e qtd = 0
     lista->inicio = nullptr;
@@ -23,7 +23,7 @@ bool lista_vazia(Lista *lista){
   
   //se a lista é vazia retorna true
   if(lista->inicio == nullptr){
-    cout << "Lista é vazia";
+    cout << "\nLista é vazia\n";
     return true;
   } else{
     //se a lsita não é vazia, retorna false
@@ -36,7 +36,7 @@ void inserir_lista(Lista *lista, int dado){
   //tentamos alocar memoria para um novoNo, mas caso não há espaço devolvemos mensagem
   No *novoNo = new (std::nothrow) No;
   if(novoNo==nullptr){
-    cout<<"Não há espaço na memória para o novoNo";
+    cout<<"\nNão há espaço na memória para o novoNo\n";
   } else{
     //SE há espaço, info recebe o dado e prox aponta para nullptr
     novoNo->info = dado;
@@ -83,7 +83,7 @@ void removerElemento(Lista *lista, int dado){
   
   //se a lista estiver vazia não podemos remover, pois não há elemento a ser removido
   if(lista_vazia(lista)){
-    cout<< "Impossivel remover";
+    cout<< "\nImpossivel remover\n";
   } else{
     //se a lista não for vazia, podemos remover. Ai faremos uma verificação de se vai ser removido algo
     //e de onde ele será removido (inicio, meio ou fim da lista)
@@ -112,7 +112,7 @@ void removerElemento(Lista *lista, int dado){
       delete noAux;
       lista->qtd--;
     } else {
-      cout <<"Não é possível remover, pois o elemento não faz parte da lista";
+      cout <<"\nNão é possível remover, pois o elemento não faz parte da lista\n";
     }
   }
 }
@@ -122,7 +122,7 @@ void mostraLista(Lista *lista){
   
   //Se a lista estiver vazia não é possível imprimi-la
   if(lista_vazia(lista)){
-    cout<<"Não é possível imprimir a lista";
+    cout<<"\nNão é possível imprimir a lista\n";
   } else {
     //Caso a lista tiver dados, iremos criar o noAux, pois ele que vai "passear"
     //pela lista e ir imprimidando os valores
@@ -131,10 +131,31 @@ void mostraLista(Lista *lista){
     //colocamos um while que vai rodar enquando naAux for diferente de nullptr,
     //pois ele só sera nullptr qundo acabarem os valores
     //noAux recebe noAux->prox para ir ao próximo valor
-    cout << "Valores da lista: \n";
+    cout << "\nValores da lista: \n";
     while (noAux != nullptr) {
       cout << noAux->info << " -> ";
       noAux = noAux->prox;
+    }
+  }
+}
+
+//Pesquisando se na lista há um elemento digitado pelo usuario
+void pesquisaElemento(Lista *lista, int dado){
+  //Primeiro verificamos se a lista está vazia, se ela estiver, não conseguimos
+  //realizar a pesquisa
+  if(lista_vazia(lista)){
+    cout << "\nImpossivel pesquisar";
+  } else {
+    No *noAux = lista->inicio;
+
+    while(noAux != nullptr && noAux->info != dado){
+      noAux = noAux->prox;
+    }
+
+    if(noAux != nullptr){
+      cout << "\nElemento encontrado na lista\n";
+    } else{
+      cout << "\nElemento não existe na lista\n";
     }
   }
 }
